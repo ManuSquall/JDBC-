@@ -12,7 +12,7 @@ public class Main1 {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             //db parameters
-            String url = "jdbc:mysql://localhost:3306/mysqljdbc?serverTimeZone=UTC";
+            String url = "jdbc:mysql://localhost:3306/mysqljdbc?serverTimezone=UTC";
             String user = "root";
             String password = "";
 
@@ -24,8 +24,10 @@ public class Main1 {
             Statement stmt = conn.createStatement();
 
             // redaction de notre instruction sql
-            String sql="CREATE TABLE example ( id smallint unsigned not null auto_increment, name varchar(20) not null, constraint pk_example primary key (id) );";
-            stmt.executeQuery(sql);
+            String sql="insert into client(nom) values('squall');";
+            //stmt.executeQuery(sql);
+
+            stmt.executeUpdate(sql);
 
             stmt.close();
             conn.close();
